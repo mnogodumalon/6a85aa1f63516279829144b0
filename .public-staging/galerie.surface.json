@@ -1,0 +1,21 @@
+{
+  "slug": "galerie",
+  "component": "Galerie",
+  "title": "Unsere Galerie",
+  "endpoints": [
+    {
+      "entity": "galerie",
+      "op": "list",
+      "fields": ["foto_titel", "foto_datei", "foto_beschreibung", "foto_kategorie"],
+      "scope_description": "Zeigt alle Galeriefotos (keine Einschränkung — alle sind öffentlich sichtbar)",
+      "max_records": 200
+    },
+    {
+      "entity": "standort_kontakt",
+      "op": "list",
+      "fields": ["restaurant_name"],
+      "scope_description": "Liest den Restaurantnamen für die Seitenüberschrift",
+      "max_records": 1
+    }
+  ]
+}

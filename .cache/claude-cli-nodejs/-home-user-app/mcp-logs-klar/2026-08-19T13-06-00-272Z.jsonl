@@ -1,0 +1,4 @@
+{"debug":"Calling MCP tool: build_components","timestamp":"2026-08-19T13:06:32.976Z","sessionId":"5c1aef7f-56cb-46ff-ad91-b66df0fae67d","cwd":"/home/user/app"}
+{"debug":"Tool 'build_components' completed successfully in 6ms","timestamp":"2026-08-19T13:06:32.982Z","sessionId":"5c1aef7f-56cb-46ff-ad91-b66df0fae67d","cwd":"/home/user/app"}
+{"debug":"Calling MCP tool: await_components","timestamp":"2026-08-19T13:07:42.204Z","sessionId":"5c1aef7f-56cb-46ff-ad91-b66df0fae67d","cwd":"/home/user/app"}
+{"debug":"Tool 'await_components' completed successfully in 3ms","timestamp":"2026-08-19T13:07:42.207Z","sessionId":"5c1aef7f-56cb-46ff-ad91-b66df0fae67d","cwd":"/home/user/app"}

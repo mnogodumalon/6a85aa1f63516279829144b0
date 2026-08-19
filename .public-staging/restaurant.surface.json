@@ -1,0 +1,56 @@
+{
+  "slug": "restaurant",
+  "component": "Restaurant",
+  "title": "La Cucina – Speisekarte & Infos",
+  "endpoints": [
+    {
+      "entity": "speisekarte",
+      "op": "list",
+      "fields": [
+        "gericht_name",
+        "kategorie",
+        "beschreibung",
+        "preis",
+        "gericht_foto",
+        "vegetarisch",
+        "vegan",
+        "glutenfrei"
+      ],
+      "scope_description": "zeigt alle Gerichte der Speisekarte",
+      "max_records": 200
+    },
+    {
+      "entity": "oeffnungszeiten",
+      "op": "list",
+      "fields": [
+        "wochentag",
+        "geschlossen",
+        "oeffnung_von",
+        "oeffnung_bis",
+        "mittagspause_von",
+        "mittagspause_bis",
+        "hinweis_tag"
+      ],
+      "scope_description": "zeigt die Öffnungszeiten aller Wochentage",
+      "max_records": 7
+    },
+    {
+      "entity": "standort_kontakt",
+      "op": "list",
+      "fields": [
+        "restaurant_name",
+        "strasse",
+        "hausnummer",
+        "postleitzahl",
+        "ort",
+        "telefon",
+        "email",
+        "webseite",
+        "reservierungshinweis",
+        "standort_karte"
+      ],
+      "scope_description": "zeigt Adresse, Kontakt und Reservierungshinweis des Restaurants",
+      "max_records": 1
+    }
+  ]
+}

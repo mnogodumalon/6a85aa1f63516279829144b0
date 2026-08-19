@@ -1,0 +1,10 @@
+{
+  "components": [
+    {
+      "file": "src/components/custom/GalerieGrid.tsx",
+      "component": "GalerieGrid",
+      "ok": true,
+      "error": null
+    }
+  ]
+}

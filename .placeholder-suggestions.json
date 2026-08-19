@@ -1,0 +1,36 @@
+{
+  "SpeisekarteDialog.tsx": {
+    "gericht_name": "z. B. Spaghetti Carbonara",
+    "kategorie": "Wähle eine Kategorie",
+    "beschreibung": "Zutaten, Herkunft, Besonderheiten...",
+    "preis": "z. B. 12,50",
+    "vegetarisch": "Vegetarisch?",
+    "vegan": "Vegan?",
+    "glutenfrei": "Glutenfrei?"
+  },
+  "OeffnungszeitenDialog.tsx": {
+    "wochentag": "Wähle einen Wochentag",
+    "geschlossen": "Geschlossen an diesem Tag?",
+    "oeffnung_von": "z. B. 11:30",
+    "oeffnung_bis": "z. B. 23:00",
+    "mittagspause_von": "z. B. 14:00",
+    "mittagspause_bis": "z. B. 17:30",
+    "hinweis_tag": "z. B. Nur am Wochenende"
+  },
+  "GalerieDialog.tsx": {
+    "foto_titel": "z. B. Unser Speiseraum",
+    "foto_beschreibung": "Was zeigt das Foto, Atmosphäre, Details...",
+    "foto_kategorie": "Wähle eine Kategorie"
+  },
+  "StandortKontaktDialog.tsx": {
+    "restaurant_name": "z. B. La Cucina",
+    "strasse": "z. B. Via Roma",
+    "hausnummer": "z. B. 42",
+    "postleitzahl": "z. B. 10115",
+    "ort": "z. B. Berlin",
+    "telefon": "z. B. 030 12345678",
+    "email": "z. B. kontakt@lacucina.de",
+    "webseite": "z. B. https://www.lacucina.de",
+    "reservierungshinweis": "Reservierungsbedingungen, Öffnungszeiten, Besonderheiten..."
+  }
+}

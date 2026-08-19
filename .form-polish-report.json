@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "Speisekarte": {
+      "placeholders_set": 7,
+      "defaults_keys": ["kategorie"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten ohne Number-Multiplizierungen, Datumspaare oder applookup-Preis-Chains. Ein einzelnes Preis-Feld hat keine Berechnungspartner."
+    },
+    "Öffnungszeiten": {
+      "placeholders_set": 7,
+      "defaults_keys": ["geschlossen"],
+      "computed_keys": [],
+      "reason": "Reine Stammdaten für Restaurantöffnungen. Keine Number-Felder, keine Datumspaare, keine Berechnung sinnvoll (Öffnungszeiten sind dokumentarische Strings)."
+    },
+    "Galerie": {
+      "placeholders_set": 3,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Media-Metadaten. Kein Number-Feld, kein applookup, keine Berechnung."
+    },
+    "Standort & Kontakt": {
+      "placeholders_set": 9,
+      "defaults_keys": [],
+      "computed_keys": [],
+      "reason": "Reine Adressen- und Kontaktdaten. Kein Number-Feld, kein applookup, kein Datumspaar. fieldOrder optimiert mit Adress-Pairs (Straße+Nummer, PLZ+Ort)."
+    }
+  }
+}
