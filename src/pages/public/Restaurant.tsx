@@ -6,6 +6,7 @@ import {
   PageUnavailableError,
   type PublicPagesConfig,
   type PublicPageConfig,
+  type PublicRecordResult,
 } from '@/lib/publicClient';
 import { tx } from '@/i18n';
 import {
@@ -74,18 +75,6 @@ const KATEGORIE_ORDER = [
   'getraenk',
 ];
 
-const KATEGORIE_LABELS: Record<string, string> = {
-  tagesgericht: 'Tagesgericht',
-  vorspeise: 'Vorspeisen',
-  suppe: 'Suppen',
-  salat: 'Salate',
-  pasta: 'Pasta',
-  pizza: 'Pizza',
-  hauptgericht: 'Hauptgerichte',
-  dessert: 'Desserts',
-  getraenk: 'Getränke',
-};
-
 const WOCHENTAG_ORDER = [
   'montag',
   'dienstag',
@@ -95,16 +84,6 @@ const WOCHENTAG_ORDER = [
   'samstag',
   'sonntag',
 ];
-
-const WOCHENTAG_LABELS: Record<string, string> = {
-  montag: 'Montag',
-  dienstag: 'Dienstag',
-  mittwoch: 'Mittwoch',
-  donnerstag: 'Donnerstag',
-  freitag: 'Freitag',
-  samstag: 'Samstag',
-  sonntag: 'Sonntag',
-};
 
 // ─── Scroll helpers ────────────────────────────────────────────────────────
 
@@ -174,6 +153,28 @@ function GerichtCard({ g }: { g: Gericht }) {
 // ─── Main component ────────────────────────────────────────────────────────
 
 export default function Restaurant() {
+  const WOCHENTAG_LABELS: Record<string, string> = {
+  montag: 'Montag',
+  dienstag: 'Dienstag',
+  mittwoch: 'Mittwoch',
+  donnerstag: 'Donnerstag',
+  freitag: 'Freitag',
+  samstag: 'Samstag',
+  sonntag: 'Sonntag',
+};
+
+  const KATEGORIE_LABELS: Record<string, string> = {
+  tagesgericht: 'Tagesgericht',
+  vorspeise: 'Vorspeisen',
+  suppe: 'Suppen',
+  salat: 'Salate',
+  pasta: 'Pasta',
+  pizza: 'Pizza',
+  hauptgericht: 'Hauptgerichte',
+  dessert: 'Desserts',
+  getraenk: 'Getränke',
+};
+
   const [cfg, setCfg] = useState<PublicPagesConfig | null>(null);
   const [page, setPage] = useState<PublicPageConfig | null>(null);
   const [loading, setLoading] = useState(true);
@@ -202,9 +203,9 @@ export default function Restaurant() {
         const epStand  = p.endpoints?.find(e => e.entity === 'standort_kontakt' && e.op === 'list');
 
         const [rSpeise, rOeff, rStand] = await Promise.all([
-          epSpeise ? listPublicRecords(c, p, { appId: epSpeise.app_id }) : Promise.resolve({}),
-          epOeff   ? listPublicRecords(c, p, { appId: epOeff.app_id })   : Promise.resolve({}),
-          epStand  ? listPublicRecords(c, p, { appId: epStand.app_id })  : Promise.resolve({}),
+          epSpeise ? listPublicRecords(c, p, { appId: epSpeise.app_id }) : Promise.resolve({} as Record<string, PublicRecordResult>),
+          epOeff   ? listPublicRecords(c, p, { appId: epOeff.app_id })   : Promise.resolve({} as Record<string, PublicRecordResult>),
+          epStand  ? listPublicRecords(c, p, { appId: epStand.app_id })  : Promise.resolve({} as Record<string, PublicRecordResult>),
         ]);
 
         setGerichte(
@@ -286,9 +287,9 @@ export default function Restaurant() {
   // ─── Map URL fallback (Google Maps) ───────────────────────────────────
   const geo = standort?.standort_karte;
   const mapEmbedUrl = geo
-    ? `https://maps.google.com/maps?q=${geo.lat},${geo.long}&z=16&output=embed`
+    ? tx`https://maps.google.com/maps?q=${geo.lat},${geo.long}&z=16&output=embed`
     : standort
-      ? `https://maps.google.com/maps?q=${encodeURIComponent(
+      ? tx`https://maps.google.com/maps?q=${encodeURIComponent(
           [standort.strasse, standort.hausnummer, standort.postleitzahl, standort.ort]
             .filter(Boolean).join(' ')
         )}&z=16&output=embed`
